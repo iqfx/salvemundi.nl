@@ -24,7 +24,7 @@
                 $table->date('birthday');
                 $table->string('shirt_size');
                 $table->text('remarks')->nullable();
-                $table->string('transaction_id');
+                $table->unsignedInteger('transaction_id');
                 $table->boolean('alcohol');
                 $table->boolean('extra_shirt');
                 $table->boolean('same_sex_rooms');

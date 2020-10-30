@@ -14,6 +14,7 @@
          * @return void
          */
         public function up() {
+            Schema::dropIfExists('introductions');
             Schema::create('introductions', function (Blueprint $table) {
                 $table->increments('id');
                 $table->unsignedInteger('year_id');
@@ -33,7 +34,6 @@
             });
             Schema::table('intro_applications', function (Blueprint $table) {
                 $table->unsignedInteger('introduction_id')->nullable();
-                $table->unsignedInteger('transaction_id')->change();
                 $table->string('type')->default('reservation');
                 $table->string('status')->default('email_unconfirmed');
             });
